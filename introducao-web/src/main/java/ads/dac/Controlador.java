@@ -17,10 +17,15 @@ public class Controlador {
     private Aluno aluno = new Aluno();
     @Inject
     private Alunos alunos;
-    
-    public String salvar(){
+
+    public String salvar() {
         alunos.persist(aluno);
-        aluno= new Aluno();
+        aluno = new Aluno();
+        return null;
+    }
+
+    public String editar(Aluno novo) {
+        alunos.merge(novo);
         return null;
     }
 
@@ -31,9 +36,9 @@ public class Controlador {
     public void setAluno(Aluno aluno) {
         this.aluno = aluno;
     }
-    
-    public List<Aluno> getTodosAlunos(){
+
+    public List<Aluno> getTodosAlunos() {
         return alunos.all();
     }
-    
+
 }

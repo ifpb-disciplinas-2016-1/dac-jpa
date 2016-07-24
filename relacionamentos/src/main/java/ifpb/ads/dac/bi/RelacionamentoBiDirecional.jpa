@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="ifpb.ads.dac.bi" v="1.5.4" thm="PMacColorScheme" xs="false" id="_14692978185241" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity xre="false" sm="false" abs="false" class="Projeto" visibile="true" minimized="false" rootElement="_14692978185241" id="_14692978185432">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="descricao" id="_14692978185444"/>
+            <many-to-one primaryKey="false" connected-entity-id="_14692978185555" connected-attribute-id="_146929805951546" visibile="true" name="empregado" id="_146929805950745"/>
+            <jpa:id attribute-type="int" visibile="true" name="id" id="_14692978185443">
+                <jpa:generated-value/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Empregado" visibile="true" minimized="false" rootElement="_14692978185241" id="_14692978185555">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="nome" id="_14692978185567"/>
+            <one-to-many collection-type="java.util.List" connected-entity-id="_14692978185432" connected-attribute-id="_146929805950745" visibile="true" name="projetoes" id="_146929805951546"/>
+            <one-to-one own="true" primaryKey="false" connected-entity-id="_146929781856910" connected-attribute-id="_146929781856913" visibile="true" name="vaga" id="_14692978185568">
+                <cascade>
+                    <jpa:cascade-all/>
+                </cascade>
+            </one-to-one>
+            <jpa:id attribute-type="String" visibile="true" name="matricula" id="_14692978185566"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Vaga" visibile="true" minimized="false" rootElement="_14692978185241" id="_146929781856910">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="localizacao" id="_146929781856912"/>
+            <one-to-one own="false" primaryKey="false" connected-entity-id="_14692978185555" connected-attribute-id="_14692978185568" visibile="true" name="empregado" id="_146929781856913"/>
+            <jpa:id attribute-type="int" visibile="true" name="id" id="_146929781856911">
+                <jpa:generated-value/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:c>
+        <db u="jdbc:postgresql://localhost:5432/dac-relacionamento" n="postgres" p="" d="org.postgresql.Driver"/>
+    </jpa:c>
+    <jpa:diagram>
+        <plane elementRef="_14692978185241">
+            <shape elementRef="_14692978185432">
+                <Bounds x="344.0" y="173.0" width="140.0" height="121.0"/>
+            </shape>
+            <shape elementRef="_14692978185555">
+                <Bounds x="32.0" y="32.0" width="166.0" height="141.0"/>
+            </shape>
+            <shape elementRef="_146929781856910">
+                <Bounds x="344.0" y="32.0" width="128.0" height="121.0"/>
+            </shape>
+        </plane>
+    </jpa:diagram>
+</jpa:entity-mappings>

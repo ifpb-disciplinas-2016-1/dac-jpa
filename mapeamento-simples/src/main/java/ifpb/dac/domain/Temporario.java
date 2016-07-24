@@ -1,38 +1,32 @@
-package ads.dac;
+package ifpb.dac.domain;
 
 import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 /**
  * @author Ricardo Job
  * @mail ricardo.job@ifpb.edu.br
- * @since 22/06/2016, 08:59:54
+ * @since 18/02/2016, 08:43:21
  */
 @Entity
-//@Table(name = "Aluno")
-public class Aluno implements Serializable{
+public class Temporario implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private int id;
-    @Basic(fetch = FetchType.LAZY)
     private String nome;
 
-    public Aluno() {
+    public Temporario() {
     }
 
-    public Aluno(int id, String nome) {
+    public Temporario(int id, String nome) {
         this.id = id;
         this.nome = nome;
     }
-    public Aluno(String nome) {
-        
+    public Temporario( String nome) {
+            
         this.nome = nome;
     }
 
@@ -51,5 +45,6 @@ public class Aluno implements Serializable{
     public void setNome(String nome) {
         this.nome = nome;
     }
+    
     
 }

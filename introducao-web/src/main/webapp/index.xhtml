@@ -13,18 +13,23 @@
             <h:commandButton value="salvar" action="#{controlador.salvar()}" />
         </h:form>
 
-        <h:dataTable value="#{controlador.todosAlunos}" var="aluno">
-            <h:column>
-                <f:facet name="id">Id</f:facet>
-                    #{aluno.id}
-            </h:column>
-            
-            <h:column>
-                <f:facet name="nome">Nome</f:facet>
-                    #{aluno.nome}
-            </h:column>
+        <h:form>
+            <h:dataTable value="#{controlador.todosAlunos}" var="aluno">
+                <h:column>
+                    <f:facet name="header">Id</f:facet>
+                    <h:outputText value="#{aluno.id}" />
+                </h:column>
 
-        </h:dataTable>
+                <h:column>
+                    <f:facet name="header">Nome</f:facet>
+                    <h:outputText value="#{aluno.nome}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Ação</f:facet>
+                    <h:commandButton value="atualizar" action="#{controlador.editar(aluno)}" />
+                </h:column>
+            </h:dataTable>
+        </h:form>
     </h:body>
 </html>
 
