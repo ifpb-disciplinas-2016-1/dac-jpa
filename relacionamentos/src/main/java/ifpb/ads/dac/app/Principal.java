@@ -1,5 +1,10 @@
-package ifpb.ads.dac;
+package ifpb.ads.dac.app;
 
+import ifpb.ads.dac.Endereco;
+import ifpb.ads.dac.Faculdade;
+import ifpb.ads.dac.Hobby;
+import ifpb.ads.dac.Pessoa;
+import ifpb.ads.dac.Telefone;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

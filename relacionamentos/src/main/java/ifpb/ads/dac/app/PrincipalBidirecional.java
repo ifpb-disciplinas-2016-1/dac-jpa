@@ -1,5 +1,7 @@
-package ifpb.ads.dac.bi;
+package ifpb.ads.dac.app;
 
+import ifpb.ads.dac.bi.Empregado;
+import ifpb.ads.dac.bi.Vaga;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
